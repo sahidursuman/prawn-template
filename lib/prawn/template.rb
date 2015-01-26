@@ -2,6 +2,7 @@ require "prawn/template/version"
 
 module Prawn
   module Template
-    # Your code goes here...
+    class Simple
+    end
   end
 end
