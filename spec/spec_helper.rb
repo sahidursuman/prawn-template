@@ -1,5 +1,7 @@
 require_relative "../lib/prawn/template"
 
+require "pdf/inspector"
+
 RSpec.configure do |config|
 
   config.expect_with :rspec do |expectations|
