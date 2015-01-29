@@ -3,7 +3,6 @@ require "spec_helper"
 class TestDocument < Prawn::Template::Simple
 
   def body
-    draw_text(t(:translated_body_text))
     2.times do
       start_new_page
     end
