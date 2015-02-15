@@ -1,0 +1,4 @@
+en:
+  prawn/template/simple:
+    number_pages: "Page <page> of <total>"
+    content: "Boomshakalaka!"

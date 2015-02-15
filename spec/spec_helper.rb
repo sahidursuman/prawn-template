@@ -1,6 +1,7 @@
 require_relative "../lib/prawn/template"
-
 require "pdf/inspector"
+
+require File.dirname(__FILE__) + "/support/translation_helpers"
 
 RSpec.configure do |config|
 
