@@ -1,5 +1,6 @@
 require_relative "../lib/prawn/template"
 require "pdf/inspector"
+require "pry"
 
 require File.dirname(__FILE__) + "/support/translation_helpers"
 

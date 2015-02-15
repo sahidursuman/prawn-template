@@ -7,10 +7,13 @@ I18n.default_locale = :en
 
 module Prawn
   module Template
+    DATADIR = "data/"
+
     class Simple < Prawn::Document
 
       def initialize(*args)
         super(*args)
+        logo
         body
         finalize
       end
@@ -21,9 +24,13 @@ module Prawn
       end
 
       def finalize
-        number_pages(t(:number_pages),
-                     at: [bounds.right - 150, 0],
-                     align: :right)
+        number_pages(
+          t(:number_pages), at: [bounds.right - 150, 0], align: :right
+        )
+      end
+
+      def logo
+        image "#{Prawn::Template::DATADIR}/logos/default.png", width: 100, position: :right
       end
 
       def t(string, options = {})
