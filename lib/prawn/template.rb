@@ -18,6 +18,10 @@ module Prawn
         finalize
       end
 
+      def filename
+        self.class.name.downcase.split('::').join('_') + '.pdf'
+      end
+
       private
 
       def body

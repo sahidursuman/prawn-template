@@ -1,20 +1,22 @@
 require "spec_helper"
 
-class TestDocument < Prawn::Template::Simple
+module TestDocument
+  class Simple < Prawn::Template::Simple
 
-  def body
-    text t(:content)
-    2.times do
-      start_new_page
+    def body
+      text t(:content)
+      2.times do
+        start_new_page
+      end
     end
-  end
 
+  end
 end
 
 describe Prawn::Template::Simple do
   include TranslationHelpers
 
-  subject { TestDocument.new }
+  subject { TestDocument::Simple.new }
 
   def rendered
     subject.render
@@ -48,5 +50,17 @@ describe Prawn::Template::Simple do
   end
 
   it "has a the current date in long format on the first page"
+
+  describe "#filename" do
+    it "has a default filename if not set" do
+      expect(subject.filename).to eq(subject.class.name.downcase.split('::').join('_') + '.pdf')
+    end
+
+    it "uses the defined filename if set"
+  end
+
+  describe "#render_file" do
+    it "renders a file with the filename set"
+  end
 
 end
